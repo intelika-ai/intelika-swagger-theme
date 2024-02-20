@@ -25,7 +25,6 @@ This is a theme for [Swagger UI]() (JavaScript/TypeScript/NestJS) that provides 
 
 Use the package manager of your choice to install the package:
 
-```bash
 npm
 ```bash
 npm install --save @intelika/swagger-theme
