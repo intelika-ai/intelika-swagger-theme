@@ -59,7 +59,7 @@ export function setupSwagger(app: INestApplication): void {
 
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api-docs', app, document, {
-    customCss: getThemeSync().toString() // In custom css we will add the theme
+    customCss: getThemeSync().toString()   // In custom css we will add the theme
   });
 }
 
@@ -101,7 +101,7 @@ const specs = swaggerJsdoc(options);
 
 const app = express();
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {
-  customCss: getThemeSync().toString() // In custom css we will add the theme
+  customCss: getThemeSync().toString()   // In custom css we will add the theme
 }));
 
 app.listen(3000);
@@ -137,7 +137,7 @@ const specs = swaggerJsdoc(options);
 const app = express();
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {
-  customCss: getThemeSync().toString() // In custom css we will add the theme
+  customCss: getThemeSync().toString()   // In custom css we will add the theme
 }));
 
 app.listen(3000);
