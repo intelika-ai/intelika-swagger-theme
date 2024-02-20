@@ -4,6 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This is a theme for [Swagger UI]() (JavaScript/TypeScript/NestJS) that provides a clean and modern look for your API documentation.
+It can also be used for other languages that swagger supports as well. See [Other languages](#others)
 
 ![image](https://github.com/intelika-ai/intelika-swagger-theme/assets/66132114/0bf7f819-660d-4c81-a790-e85957c2c4a8)
 
@@ -142,6 +143,10 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {
 
 app.listen(3000);
 ```
+
+
+### Others
+Other logics
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
