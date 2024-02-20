@@ -5,6 +5,9 @@
 
 This is a theme for [Swagger UI]() (JavaScript/TypeScript/NestJS) that provides a clean and modern look for your API documentation.
 
+![image](https://github.com/intelika-ai/intelika-swagger-theme/assets/66132114/0bf7f819-660d-4c81-a790-e85957c2c4a8)
+
+
 
 ## Table of Contents
 
