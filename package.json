@@ -1,0 +1,41 @@
+{
+  "name": "@intelika/swagger-theme",
+  "version": "1.0.0",
+  "description": "A theme for swagger-ui ( OpenAPI ) for JavaScript/TypeScript",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build:lib": "tsc -p tsconfig.lib.json",
+    "format": "prettier --write \"lib/**/*.ts\" \"test/**/*.ts\"",
+    "lint": "eslint  \"lib/**/*.ts\" --fix"
+  },
+  "files": [
+    "/dist",
+    "/assets"
+  ],
+  "keywords": [
+    "swagger",
+    "theme",
+    "openapi",
+    "intelika",
+    "swagger theme",
+    "swagger ui",
+    "swagger-ui",
+    "swagger-ui theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/intelika-ai/intelika-swagger-theme"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "@typescript-eslint/eslint-plugin": "7.0.1",
+    "@typescript-eslint/parser": "7.0.1",
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-prettier": "5.1.3",
+    "prettier": "3.2.5",
+    "typescript": "5.3.3"
+  },
+  "author": "intelika-ai",
+  "license": "MIT"
+}
