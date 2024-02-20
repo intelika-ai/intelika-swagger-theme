@@ -19,6 +19,7 @@ It can also be used for other languages that swagger supports as well. See [Othe
     - [NestJS](#nestjs)
     - [JavaScript](#javascript)
     - [TypeScript](#typescript)
+    - [Others Language](#others-language)
   - [Contributing](#contributing)
   - [License](#license)
  
@@ -145,8 +146,13 @@ app.listen(3000);
 ```
 
 
-### Others
-Other logics
+### Others Language
+
+fetch the css file from the link above and add it to your swagger ui configuration.
+
+```url
+https://raw.githubusercontent.com/intelika-ai/intelika-swagger-theme/main/assets/selorex-swagger.css
+```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
