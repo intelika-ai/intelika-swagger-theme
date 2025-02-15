@@ -12,7 +12,7 @@ export async function getThemeAsync(): Promise<Buffer> {
   try {
     return await fsPromises.readFile(PATH)
   } catch (error) {
-    console.error('Error reading file:', error)
+    console.error('[@intelika/swagger-theme] Error reading file:', error)
     throw error
   }
 }
@@ -27,7 +27,7 @@ export function getThemeSync(): Buffer {
     const content = readFileSync(PATH)
     return content
   } catch (error) {
-    console.error('Error reading file:', error)
+    console.error('[@intelika/swagger-theme] Error reading file:', error)
     throw error
   }
 }
