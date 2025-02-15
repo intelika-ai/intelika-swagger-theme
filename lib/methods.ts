@@ -25,7 +25,6 @@ export async function getThemeAsync(): Promise<Buffer> {
 export function getThemeSync(): Buffer {
   try {
     const content = readFileSync(PATH)
-    console.log('CONTENT: ', content.slice(0, 10))
     return content
   } catch (error) {
     console.error('Error reading file:', error)
