@@ -154,6 +154,9 @@ fetch the css file from the link above and add it to your swagger ui configurati
 https://raw.githubusercontent.com/intelika-ai/intelika-swagger-theme/main/assets/selorex-swagger.css
 ```
 
+### Other implementations
+- [Browsers extention](https://github.com/MahdiyarGHD/intelika-swagger-theme-browser-extension)
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
