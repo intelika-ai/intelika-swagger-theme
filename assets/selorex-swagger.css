@@ -1,12 +1,13 @@
 :root {
     --intelika-bg-50: 65, 103, 140;
     --intelika-bg-100: 59, 93, 126;
-    --intelika-bg-200: 46, 72, 98;
-    --intelika-bg-300: 33, 52, 71;
-    --intelika-bg-400: 20, 31, 43;
-    --intelika-bg-500: 7, 11, 15;
-    --intelika-bg-600: 4, 6, 8;
-    --intelika-bg-700: 1, 1, 1;
+    --intelika-bg-200: 24, 24, 24;
+    --intelika-bg-300: 18, 18, 18;
+    --intelika-bg-400: 12, 12, 12;
+    /* --intelika-bg-500: 7, 11, 15; */
+    --intelika-bg-500: 8, 8, 8;
+    --intelika-bg-600: 5, 5, 5;
+    --intelika-bg-700: 3, 3, 3;
     --intelika-bg-800: 0, 0, 0;
     --intelika-bg-900: 0, 0, 0;
     --intelika-text-50: 225, 225, 225;
@@ -21,6 +22,7 @@
     --intelika-text-900: 38, 38, 38;
     --intelika-text-950: 0, 0, 0;
     --intelika-primary: 188, 243, 104;
+    --intelika-primary-neutral: 230, 230, 230;
     --intelika-secondary: 165, 104, 243;
     --intelika-primaryGradient: 104, 243, 143
 }
@@ -38,6 +40,11 @@ body {
     background-color: rgb(var(--intelika-bg-600));
     border-bottom: 2px solid rgba(255, 255, 255, .04);
     padding: 1.2rem 0
+}
+
+
+hr {
+    border-color: rgba(255, 255, 255, .04)
 }
 
 #swagger-ui section.swagger-ui.swagger-container div.topbar div.wrapper div.topbar-wrapper a.link::before {
@@ -61,6 +68,8 @@ body {
 
 
 
+
+
 #swagger-ui .info .title {
     color: rgb(var(--intelika-text-50));
     display: flex;
@@ -77,7 +86,7 @@ body {
 }
 
 #swagger-ui .info h2 {
-    background: linear-gradient(to right, rgb(var(--intelika-primary)), rgb(var(--intelika-primaryGradient)));
+    background: linear-gradient(to right, rgb(233, 233, 233), rgb(180, 180, 180));
     color: rgba(0, 0, 0, 0) !important;
     font-weight: 600;
     -webkit-background-clip: text;
@@ -89,17 +98,31 @@ body {
     font-size: 1rem
 }
 
+ .swagger-ui  .renderedMarkdown code {
+    background-color: rgb(var(--intelika-bg-500));
+    border: 1px solid rgb(var(--intelika-bg-300));
+    color: rgb(var(--intelika-text-600));
+    border-radius: .6rem;
+    padding: 1rem;
+    font-size: .9rem
+ }
+ /* .swagger-ui  .renderedMarkdown code {
+    color: rgb(var(--intelika-text-600));
+    background-color: rgb(var(--intelika-bg-500));
+ } */
+
 #swagger-ui .scheme-container {
     background-color: rgba(0, 0, 0, 0);
     box-shadow: none;
-    margin: 0 8rem;
+    margin: 0;
     margin-bottom: 3rem
 }
 
 #swagger-ui .btn {
-    border-radius: .7rem;
+    border-radius: 2rem;
     padding: .5rem 2rem;
-    color: rgb(var(--intelika-text-50))
+    border-width: 1px;
+    color: rgb(var(--intelika-text-50));
 }
 
 #swagger-ui .btn:hover {
@@ -109,7 +132,9 @@ body {
 #swagger-ui .btn.authorize {
     background-color: rgb(var(--intelika-bg-500));
     color: rgb(var(--intelika-text-50));
-    border: 2px solid rgb(var(--intelika-primary))
+    border: 1px solid rgb(var(--intelika-primary));
+    white-space: nowrap;
+
 }
 
 #swagger-ui .btn.authorize svg {
@@ -140,7 +165,7 @@ body {
     margin: 0 auto;
     background-color: rgb(var(--intelika-primary));
     color: rgb(var(--intelika-bg-500));
-    border: 2px solid rgb(var(--intelika-primary))
+    border: 1px solid rgb(var(--intelika-primary))
 }
 
 #swagger-ui .btn.execute:hover {
@@ -158,11 +183,11 @@ body {
 #swagger-ui .swagger-ui input[type=search],
 #swagger-ui .swagger-ui input[type=text],
 #swagger-ui .swagger-ui textarea {
-    background-color: rgba(0, 0, 0, 0);
-    border: 2px solid rgb(var(--intelika-text-100));
+    background-color: rgba(var(--intelika-bg-600), 0.7);
+    border: 1px solid rgba(var(--intelika-text-100), 0.05);
     color: rgb(var(--intelika-text-100));
     outline: 0;
-    border-radius: .6rem;
+    border-radius: 0.8rem;
     margin: .4rem 0
 }
 
@@ -172,21 +197,32 @@ body {
 #swagger-ui .swagger-ui input[type=search]:focus,
 #swagger-ui .swagger-ui input[type=text]:focus,
 #swagger-ui .swagger-ui textarea:focus {
-    border: 2px solid rgb(var(--intelika-text-100))
+    border: 1px solid rgb(var(--intelika-text-100))
+}
+
+
+.filter-container {
+    padding: 1rem;
+    margin-bottom: 2rem
+}
+
+.filter-container input {
+    border-color: rgb(var(--intelika-bg-200)) !important;
+    background-color: rgb(var(--intelika-bg-300)) !important;
 }
 
 #swagger-ui .swagger-ui textarea {
     background-color: rgb(var(--intelika-bg-500));
-    border: 2px solid rgb(var(--intelika-bg-300))
+    border: 1px solid rgb(var(--intelika-bg-300))
 }
 
 #swagger-ui .swagger-ui textarea:focus {
-    border: 2px solid rgb(var(--intelika-bg-300))
+    border: 1px solid rgb(var(--intelika-bg-300))
 }
 
 #swagger-ui .swagger-ui select {
-    background-color: rgb(var(--intelika-bg-500)) !important;
-    border: 2px solid rgb(var(--intelika-text-100));
+    background-color: rgba(var(--intelika-bg-600), 0.7) !important;
+    border: 1px solid rgba(var(--intelika-text-100), 0.05);
     color: rgb(var(--intelika-text-100));
     outline: 0;
     padding: .5rem 1rem;
@@ -201,7 +237,7 @@ body {
 }
 
 #swagger-ui .swagger-ui select:focus {
-    border: 2px solid rgb(var(--intelika-text-100))
+    border: 1px solid rgba(var(--intelika-text-100), 0.05);
 }
 
 #swagger-ui .swagger-ui table {
@@ -225,7 +261,7 @@ body {
 }
 
 #swagger-ui .swagger-ui .model-box {
-    background-color: rgb(var(--intelika-bg-500));
+    /* background-color: rgb(var(--intelika-bg-300)); */
     border-radius: .7rem
 }
 
@@ -282,7 +318,7 @@ body {
     font-weight: 500;
     padding-bottom: .6rem;
     margin-bottom: 1.5rem !important;
-    border-bottom: 2px dashed rgb(var(--intelika-bg-400))
+    border-bottom: 2px dashed rgb(var(--intelika-bg-200))
 }
 
 #swagger-ui .dialog-ux .modal-ux .modal-ux-content .auth-container h6 {
@@ -310,7 +346,7 @@ body {
 }
 
 #swagger-ui .swagger-ui section.models {
-    border: 2px solid rgba(var(--intelika-bg-400), 0.5);
+    border: 1px solid rgba(var(--intelika-text-100), 0.1);
     border-radius: 1rem
 }
 
@@ -318,7 +354,7 @@ body {
     color: rgb(var(--intelika-text-50));
     font-weight: 600;
     padding: 1.5rem 1.8rem;
-    border-bottom: 2px dashed rgba(var(--intelika-bg-400), 0.5)
+    border-bottom: 2px dashed rgba(var(--intelika-text-100), 0.1)
 }
 
 #swagger-ui .swagger-ui section.models h4 svg {
@@ -356,6 +392,9 @@ body {
     opacity: .5
 }
 
+.swagger-ui .opblock .tab-header .tab-item.active h4 span::after { 
+    height: 2px;
+}
 
 .swagger-ui .view-line-link.copy-to-clipboard {
     width: 24px;
@@ -377,7 +416,7 @@ body {
 
 #swagger-ui .opblock-tag {
     color: rgb(var(--intelika-text-50));
-    border-bottom: 2px dashed rgb(var(--intelika-bg-400));
+    border-bottom: 2px dashed rgb(var(--intelika-bg-200));
     margin-bottom: 2rem;
     padding-bottom: 1rem
 }
@@ -392,7 +431,7 @@ body {
 
 #swagger-ui .opblock {
     border-radius: .7rem;
-    border-width: 2px
+    border-width: 1px
 }
 
 #swagger-ui .opblock button {
@@ -457,7 +496,7 @@ body {
 }
 
 #swagger-ui .opblock.is-open .opblock-summary {
-    border-bottom-width: 2px !important
+    border-bottom-width: 1px !important
 }
 
 #swagger-ui .opblock .tab-item.active h4 span:after {
@@ -504,6 +543,7 @@ body {
 }
 
 #swagger-ui .opblock .parameters-container thead tr th {
+    min-width: 14rem;
     color: rgb(var(--intelika-text-50)) !important;
     font-size: .9rem
 }
@@ -515,7 +555,8 @@ body {
 #swagger-ui .opblock .parameters-container tbody .response-col_status {
     color: rgb(var(--intelika-secondary)) !important;
     font-size: 1rem;
-    text-shadow: 0 0 12px rgb(var(--intelika-secondary));
+    /* text-shadow: 0 0 12px rgb(var(--intelika-secondary)); */
+    text-shadow: none !important;
     font-weight: bold
 }
 
@@ -558,11 +599,13 @@ body {
 }
 
 #swagger-ui .opblock .responses-inner .responses-table tbody .response-col_status {
-    color: rgb(var(--intelika-secondary)) !important;
-    font-size: 1rem;
-    text-shadow: 0 0 12px rgb(var(--intelika-secondary));
-    font-weight: bold
+    color: rgb(var(--intelika-text-100)) !important;
+    font-size: 1.2rem;
+    text-shadow: none !important;
+    font-weight: normal !important
 }
+
+
 
 #swagger-ui .opblock .responses-inner .responses-table tbody .response-col_description {
     color: rgb(var(--intelika-text-50))
@@ -597,7 +640,7 @@ body {
 }
 
 #swagger-ui .opblock.opblock-get .opblock-summary-method {
-    background-color: rgba(0, 191, 255, .2);
+    background-color: rgba(0, 191, 255, .1);
     color: #00bfff
 }
 
@@ -610,7 +653,7 @@ body {
 }
 
 #swagger-ui .opblock.opblock-put .opblock-summary-method {
-    background-color: rgba(252, 204, 48, .2);
+    background-color: rgba(252, 204, 48, .1);
     color: #fccc30
 }
 
@@ -623,7 +666,7 @@ body {
 }
 
 #swagger-ui .opblock.opblock-patch .opblock-summary-method {
-    background-color: rgba(80, 227, 198, .2);
+    background-color: rgba(80, 227, 198, .1);
     color: #50e3c6
 }
 
@@ -636,7 +679,7 @@ body {
 }
 
 #swagger-ui .opblock.opblock-post .opblock-summary-method {
-    background-color: rgba(80, 227, 104, .2);
+    background-color: rgba(80, 227, 104, .1);
     color: #50e368
 }
 
@@ -649,7 +692,7 @@ body {
 }
 
 #swagger-ui .opblock.opblock-delete .opblock-summary-method {
-    background-color: rgba(242, 60, 60, .2);
+    background-color: rgba(242, 60, 60, .1);
     color: #f23c3c
 }
 
