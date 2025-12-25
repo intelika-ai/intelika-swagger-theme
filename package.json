@@ -1,7 +1,7 @@
 {
   "name": "@intelika/swagger-theme",
-  "version": "1.0.4",
-  "description": "A theme for swagger-ui ( OpenAPI ) for JavaScript/TypeScript",
+  "version": "2.0.0",
+  "description": "A theme for swagger-ui (OpenAPI) for JavaScript/TypeScript",
   "main": "./dist/index.js",
   "scripts": {
     "build:lib": "tsc -p tsconfig.lib.json",
