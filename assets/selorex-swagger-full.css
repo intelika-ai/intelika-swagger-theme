@@ -261,7 +261,7 @@ hr {
 }
 
 #swagger-ui .swagger-ui .model-box {
-    /* background-color: rgb(var(--intelika-bg-300)); */
+    background-color: rgb(var(--intelika-bg-500));
     border-radius: .7rem
 }
 
@@ -354,6 +354,10 @@ hr {
     color: rgb(var(--intelika-text-50));
     font-weight: 600;
     padding: 1.5rem 1.8rem;
+}
+
+#swagger-ui .swagger-ui section.models.is-open h4 {
+
     border-bottom: 2px dashed rgba(var(--intelika-text-100), 0.1)
 }
 
