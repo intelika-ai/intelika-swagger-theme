@@ -1,15 +1,19 @@
+/*
+ * Default (non dark-mode) theme = dark GRAY route.
+ * These values apply when Swagger is NOT in dark mode (no .dark-mode on <html>).
+ * The greenish primary gradient is intentionally shared across both themes.
+ */
 :root {
     --intelika-bg-50: 65, 103, 140;
     --intelika-bg-100: 59, 93, 126;
-    --intelika-bg-200: 24, 24, 24;
-    --intelika-bg-300: 18, 18, 18;
-    --intelika-bg-400: 12, 12, 12;
-    /* --intelika-bg-500: 7, 11, 15; */
-    --intelika-bg-500: 8, 8, 8;
-    --intelika-bg-600: 5, 5, 5;
-    --intelika-bg-700: 3, 3, 3;
-    --intelika-bg-800: 0, 0, 0;
-    --intelika-bg-900: 0, 0, 0;
+    --intelika-bg-200: 58, 58, 64;
+    --intelika-bg-300: 48, 48, 54;
+    --intelika-bg-400: 42, 42, 47;
+    --intelika-bg-500: 36, 36, 41;
+    --intelika-bg-600: 28, 28, 33;
+    --intelika-bg-700: 22, 22, 26;
+    --intelika-bg-800: 15, 15, 18;
+    --intelika-bg-900: 9, 9, 11;
     --intelika-text-50: 225, 225, 225;
     --intelika-text-100: 250, 250, 250;
     --intelika-text-200: 245, 245, 245;
@@ -27,12 +31,42 @@
     --intelika-primaryGradient: 104, 243, 143
 }
 
+/*
+ * Dark mode theme = original near-black route.
+ * Only the background scale is overridden; text + primary colors stay shared.
+ */
+html.dark-mode {
+    --intelika-bg-200: 24, 24, 24;
+    --intelika-bg-300: 18, 18, 18;
+    --intelika-bg-400: 12, 12, 12;
+    --intelika-bg-500: 8, 8, 8;
+    --intelika-bg-600: 5, 5, 5;
+    --intelika-bg-700: 3, 3, 3;
+    --intelika-bg-800: 0, 0, 0;
+    --intelika-bg-900: 0, 0, 0
+}
+
 html {
     color-scheme: dark
 }
 
 body {
     background-color: rgb(var(--intelika-bg-500)) !important
+}
+
+/*
+ * Win back the container surface + base text color from Swagger's new
+ * dark-mode styles (html.dark-mode .swagger-ui { background; color }).
+ * The #swagger-ui id keeps these ahead of Swagger's class-only rules in
+ * both themes.
+ */
+#swagger-ui,
+#swagger-ui .swagger-ui {
+    background-color: rgb(var(--intelika-bg-500))
+}
+
+#swagger-ui .swagger-ui {
+    color: rgb(var(--intelika-text-400))
 }
 
 #swagger-ui .topbar {
@@ -98,7 +132,8 @@ hr {
     font-size: 1rem
 }
 
- .swagger-ui  .renderedMarkdown code {
+#swagger-ui .swagger-ui .markdown code,
+#swagger-ui .swagger-ui .renderedMarkdown code {
     background-color: rgb(var(--intelika-bg-500));
     border: 1px solid rgb(var(--intelika-bg-300));
     color: rgb(var(--intelika-text-600));
@@ -435,7 +470,8 @@ hr {
 
 #swagger-ui .opblock {
     border-radius: .7rem;
-    border-width: 1px
+    border-width: 1px;
+    background-color: transparent
 }
 
 #swagger-ui .opblock button {
@@ -517,7 +553,7 @@ hr {
     visibility: visible
 }
 
-#swagger-ui .opblock .opblock-section-header {
+.dark-mode #swagger-ui .opblock .opblock-section-header {
     position: relative;
     background: rgba(0, 0, 0, .5);
     box-shadow: none
@@ -640,7 +676,8 @@ hr {
 }
 
 #swagger-ui .opblock.opblock-get {
-    border-color: rgba(0, 191, 255, .7)
+    border-color: rgba(0, 191, 255, .7);
+    background-color: rgba(0, 191, 255, .05)
 }
 
 #swagger-ui .opblock.opblock-get .opblock-summary-method {
@@ -653,7 +690,8 @@ hr {
 }
 
 #swagger-ui .opblock.opblock-put {
-    border-color: rgba(252, 204, 48, .7)
+    border-color: rgba(252, 204, 48, .7);
+    background-color: rgba(252, 204, 48, .05)
 }
 
 #swagger-ui .opblock.opblock-put .opblock-summary-method {
@@ -666,7 +704,8 @@ hr {
 }
 
 #swagger-ui .opblock.opblock-patch {
-    border-color: rgba(80, 227, 198, .7)
+    border-color: rgba(80, 227, 198, .7);
+    background-color: rgba(80, 227, 198, .05)
 }
 
 #swagger-ui .opblock.opblock-patch .opblock-summary-method {
@@ -679,7 +718,8 @@ hr {
 }
 
 #swagger-ui .opblock.opblock-post {
-    border-color: rgba(80, 227, 104, .7)
+    border-color: rgba(80, 227, 104, .7);
+    background-color: rgba(80, 227, 104, .05)
 }
 
 #swagger-ui .opblock.opblock-post .opblock-summary-method {
@@ -692,7 +732,8 @@ hr {
 }
 
 #swagger-ui .opblock.opblock-delete {
-    border-color: rgba(242, 60, 60, .7)
+    border-color: rgba(242, 60, 60, .7);
+    background-color: rgba(242, 60, 60, .05)
 }
 
 #swagger-ui .opblock.opblock-delete .opblock-summary-method {
@@ -709,4 +750,35 @@ hr {
     padding: 1rem !important;
     border-radius: .7rem;
     font-weight: 500 !important
+}
+
+#swagger-ui .topbar .dark-mode-toggle {
+    margin-left: auto !important;
+}
+
+/*
+ * Swagger's new dark mode paints these inner surfaces with its own gray
+ * ($neutral-95) and the light theme paints them white. Pin them to our
+ * themed scale so both modes stay consistent with the rest of the UI.
+ */
+#swagger-ui .swagger-ui section.models .model-container {
+    background-color: rgba(var(--intelika-bg-600), .5)
+}
+
+#swagger-ui .swagger-ui .model-box {
+    background-color: rgb(var(--intelika-bg-500))
+}
+
+#swagger-ui .model {
+    color: #afafaf;
+}
+
+.swagger-ui .model-title {
+    color: #bababa;
+}
+
+#swagger-ui .opblock .opblock-section-header {
+    background: rgba(0, 0, 0, .1);
+    box-shadow: none;
+
 }
